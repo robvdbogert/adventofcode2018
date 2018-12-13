@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode2018", "AdventOfCode2018\AdventOfCode2018.csproj", "{B8A0F927-E4C8-4F1B-A5FF-139BFCC95149}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8A0F927-E4C8-4F1B-A5FF-139BFCC95149}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8A0F927-E4C8-4F1B-A5FF-139BFCC95149}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8A0F927-E4C8-4F1B-A5FF-139BFCC95149}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8A0F927-E4C8-4F1B-A5FF-139BFCC95149}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
