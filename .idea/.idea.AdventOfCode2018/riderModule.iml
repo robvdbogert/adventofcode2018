@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="RIDER_MODULE" version="4">
   <component name="NewModuleRootManager">
+    <content url="file://$USER_HOME$/.nuget/packages/tesseract/3.3.0/x64/liblept1753.dll" />
+    <content url="file://$USER_HOME$/.nuget/packages/tesseract/3.3.0/x64/libtesseract3052.dll" />
+    <content url="file://$USER_HOME$/.nuget/packages/tesseract/3.3.0/x86/liblept1753.dll" />
+    <content url="file://$USER_HOME$/.nuget/packages/tesseract/3.3.0/x86/libtesseract3052.dll" />
     <content url="file://$MODULE_DIR$/../.." />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

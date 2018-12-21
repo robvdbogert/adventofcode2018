@@ -10,10 +10,8 @@ namespace AdventOfCode2018.Day6
         {
         }
 
-        protected override void DoExecutePart1()
+        private List<Point> GetPoints(string input)
         {
-            var input = Input;
-
             var points = input.Split('\n', StringSplitOptions.RemoveEmptyEntries)
                 .Select(entry =>
                 {
@@ -28,6 +26,13 @@ namespace AdventOfCode2018.Day6
                 point.Number = pointNumber;
                 pointNumber++;
             }
+
+            return points;
+        }
+
+        protected override void DoExecutePart1()
+        {
+            var points = GetPoints(Input);
 
             var xMin = points.Min(p => p.X);
             var xMax = points.Max(p => p.X);
@@ -80,7 +85,35 @@ namespace AdventOfCode2018.Day6
 
         protected override void DoExecutePart2()
         {
-            throw new System.NotImplementedException();
+            var points = GetPoints(Input);
+
+            var xMin = points.Min(p => p.X);
+            var xMax = points.Max(p => p.X);
+            var yMin = points.Min(p => p.Y);
+            var yMax = points.Max(p => p.Y);
+
+            var grid = new int?[xMax - xMin + 1, yMax - yMin + 1];
+
+            var pointsWithinRegion = 0;
+            for (var x = xMin; x <= xMax; x++)
+            {
+                for (var y = yMin; y <= yMax; y++)
+                {
+                    var totalDistance = 0;
+                    foreach (var point in points)
+                    {
+                        totalDistance += GetDistanceToPoint(x, y, point);
+                    }
+
+                    grid[x - xMin, y - yMin] = totalDistance;
+                    if (totalDistance < 10000)
+                    {
+                        pointsWithinRegion++;
+                    }
+                }
+            }
+            
+            Console.WriteLine($"The size of the area is {pointsWithinRegion}");
         }
 
         private int Count(int?[,] grid, int pointNumber)

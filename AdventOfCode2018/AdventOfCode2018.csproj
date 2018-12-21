@@ -12,5 +12,12 @@
     <Folder Include="Day2\" />
     <Folder Include="Day3\" />
     <Folder Include="Day4\" />
+    <Folder Include="tessdata" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SixLabors.ImageSharp" Version="1.0.0-beta0005" />
+    <PackageReference Include="SixLabors.ImageSharp.Drawing" Version="1.0.0-beta0005" />
+    <PackageReference Include="Tesseract" Version="3.3.0" />
   </ItemGroup>
 </Project>
