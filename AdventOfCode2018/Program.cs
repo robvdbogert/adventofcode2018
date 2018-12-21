@@ -14,7 +14,7 @@ namespace AdventOfCode2018
             var puzzleTypes = types.Where(t => t.IsClass && !t.IsAbstract && puzzleType.IsAssignableFrom(t));
 
             var puzzles = puzzleTypes.Select(t => Activator.CreateInstance(t)).Cast<IPuzzle>();
-            var puzzle = puzzles.Single(p => p.Day == 12);
+            var puzzle = puzzles.Single(p => p.Day == 13);
 
             puzzle.ExecutePart1();
             puzzle.ExecutePart2();

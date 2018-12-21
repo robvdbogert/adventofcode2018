@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="$USER_HOME$/.nuget/packages/tesseract/3.3.0/x64/liblept1753.dll" t="Include" />
-    <e p="$USER_HOME$/.nuget/packages/tesseract/3.3.0/x64/libtesseract3052.dll" t="Include" />
-    <e p="$USER_HOME$/.nuget/packages/tesseract/3.3.0/x86/liblept1753.dll" t="Include" />
-    <e p="$USER_HOME$/.nuget/packages/tesseract/3.3.0/x86/libtesseract3052.dll" t="Include" />
-    <e p="$USER_HOME$/Library/Caches/Rider2018.2/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/Rider2018.2/resharper-host/local/Transient/ReSharperHost/v182/SolutionCaches/_AdventOfCode2018.1353113774.00" t="ExcludeRecursive" />
-    <e p="$APPLICATION_CONFIG_DIR$/scratches" t="IncludeRecursive" />
-    <e p="$PROJECT_DIR$" t="IncludeFlat">
-      <e p="AdventOfCode2018" t="IncludeRecursive">
+    <e p="C:\Users\rob\.nuget\packages\tesseract\3.3.0\x64\liblept1753.dll" t="Include" />
+    <e p="C:\Users\rob\.nuget\packages\tesseract\3.3.0\x64\libtesseract3052.dll" t="Include" />
+    <e p="C:\Users\rob\.nuget\packages\tesseract\3.3.0\x86\liblept1753.dll" t="Include" />
+    <e p="C:\Users\rob\.nuget\packages\tesseract\3.3.0\x86\libtesseract3052.dll" t="Include" />
+    <e p="C:\Users\rob\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\rob\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_AdventOfCode2018.-227783010.00" t="ExcludeRecursive" />
+    <e p="C:\Users\rob\RiderProjects\adventofcode2018" t="IncludeFlat">
+      <e p="adventofcode2018" t="IncludeRecursive">
         <e p="AdventOfCode2018.csproj" t="IncludeRecursive" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Day1" t="Include">
@@ -23,6 +22,9 @@
         </e>
         <e p="Day12" t="Include">
           <e p="Day12.cs" t="Include" />
+        </e>
+        <e p="Day13" t="Include">
+          <e p="Day13.cs" t="Include" />
         </e>
         <e p="Day2" t="Include">
           <e p="Day2.cs" t="Include" />
@@ -54,6 +56,8 @@
           <e p="Day10_example.txt" t="Include" />
           <e p="Day12.txt" t="Include" />
           <e p="Day12_example.txt" t="Include" />
+          <e p="Day13.txt" t="Include" />
+          <e p="Day13_example.txt" t="Include" />
           <e p="Day2.txt" t="Include" />
           <e p="Day3.txt" t="Include" />
           <e p="Day3_example.txt" t="Include" />
@@ -77,16 +81,9 @@
             </e>
           </e>
         </e>
-        <e p="Output" t="Include">
-          <e p="day10_output.jpg" t="Include" />
-        </e>
         <e p="Program.cs" t="Include" />
         <e p="PuzzleBase.cs" t="Include" />
-        <e p="tessdata" t="Include">
-          <e p="eng.traineddata" t="Include" />
-          <e p="liblept1753.dll" t="Include" />
-          <e p="libtesseract3052.dll" t="Include" />
-        </e>
+        <e p="tessdata" t="Include" />
         <e p="x64" t="Include" />
         <e p="x86" t="Include" />
       </e>
