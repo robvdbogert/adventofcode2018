@@ -12,11 +12,21 @@ namespace AdventOfCode2018.Day12
         public Day12() : base(12)
         {
         }
-
+       
         protected override void DoExecutePart1()
         {
+            Run(20);
+        }      
+
+        protected override void DoExecutePart2()
+        {
+            Run(50000000000);
+        }
+        
+        private void Run(long maxGeneration) 
+        {
             var history = new Dictionary<string, int>();
-            var inputLines = Input.Split('\n', StringSplitOptions.RemoveEmptyEntries).ToList();
+            var inputLines = Input.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries).ToList();
 
             var state = inputLines[0].Substring(inputLines[0].IndexOf('#')).Replace(".", " ");
             inputLines.RemoveAt(0);
@@ -28,13 +38,16 @@ namespace AdventOfCode2018.Day12
             }).ToList();
 
             var indexOfPotZero = 0;
+            var endGeneration = 1;
+            var repeatTotalDiff = 0;
 
-            for (var i = 1; i <= 200000; i++)
+            var i = 0;
+            while (i < maxGeneration)
             {
+                i++;
+                
                 var indexFirstPotWithPlant = state.IndexOf("#");
                 state = "    " + state.Trim() + "    ";
-                
-                indexOfPotZero = indexOfPotZero - indexFirstPotWithPlant + 4;
                 
                 var newState = new char[state.Length];
                 for (var x = 0; x < newState.Length; x++)
@@ -52,18 +65,44 @@ namespace AdventOfCode2018.Day12
                     }
                 }
 
+                var newIndexOfPotZero = indexOfPotZero - indexFirstPotWithPlant + 4;
+                
                 state = new string(newState);
                 if (history.ContainsKey(state))
                 {
-                    Console.WriteLine($"Repeat detected at generation {i}, same state was at generation {history[state]}");
+                    var previousSum = GetSumOfPotsWithPlants(indexOfPotZero, state);
+                    var currentSum = GetSumOfPotsWithPlants(newIndexOfPotZero, state);
+                    repeatTotalDiff = currentSum - previousSum;
+                    
+                    Console.WriteLine(
+                        $"Repeat detected at generation {i}, " +
+                        $"same pattern was at generation {history[state]}");
+                    Console.WriteLine(
+                        $"Difference of sum between these generations is {repeatTotalDiff}");
+                    
+                    indexOfPotZero = newIndexOfPotZero;
                     break;
                 }
-                else
-                {
-                    history.Add(state, i);
-                }
+
+                indexOfPotZero = newIndexOfPotZero;
+                history.Add(state, i);
+
+                endGeneration++;
             }
 
+            var sumOfPotNumbersWithPlants = GetSumOfPotsWithPlants(indexOfPotZero, state);
+            
+            Console.WriteLine($"Gen {endGeneration}): {state}");
+            Console.WriteLine($"Sum of all pots with a plant is {sumOfPotNumbersWithPlants}");
+
+            var remainingGenerations = maxGeneration - endGeneration;
+            var endTotal = sumOfPotNumbersWithPlants + remainingGenerations * repeatTotalDiff;
+            
+            Console.WriteLine($"Final total at generation {endTotal}");
+        }
+        
+        private int GetSumOfPotsWithPlants(int indexOfPotZero, string state)
+        {
             var leftPotNumber = -indexOfPotZero;
             var sumOfPotNumbersWithPlants = 0;
             for (var i = 0; i < state.Length; i++)
@@ -74,14 +113,8 @@ namespace AdventOfCode2018.Day12
                     sumOfPotNumbersWithPlants += potNumber;
                 }
             }
-            
-            Console.WriteLine($"End: {state}");
-            Console.WriteLine($"Sum of all pots with a plant is {sumOfPotNumbersWithPlants}");
-        }
 
-        protected override void DoExecutePart2()
-        {
-            // throw new System.NotImplementedException();
+            return sumOfPotNumbersWithPlants;
         }
     }
 
