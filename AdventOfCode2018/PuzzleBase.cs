@@ -12,6 +12,8 @@ namespace AdventOfCode2018
         public string Input { get; protected set; }
 
         public string ExampleInput { get; protected set; }
+        
+        public string Example2Input { get; protected set; }
 
         protected PuzzleBase(int day)
         {
@@ -19,13 +21,16 @@ namespace AdventOfCode2018
 
             Input = GetInputFromFile();
 
-            ExampleInput = GetInputFromFile(true);
+            ExampleInput = GetInputFromFile("example");
+
+            Example2Input = GetInputFromFile("example2");
         }
 
-        protected string GetInputFromFile(bool useExampleData = false)
+        protected string GetInputFromFile(string postFix = null)
         {
-            string fileName = useExampleData ? $"./Input/Day{Day}_example.txt" : $"./Input/Day{Day}.txt";
-            if (File.Exists(fileName)) {
+            var fileName = postFix != null ? $"./Input/Day{Day}_{postFix}.txt" : $"./Input/Day{Day}.txt";
+            if (File.Exists(fileName)) 
+            {
                 return File.ReadAllText(fileName);
             }
 
