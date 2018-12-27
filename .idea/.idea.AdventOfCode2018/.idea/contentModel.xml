@@ -27,6 +27,9 @@
         <e p="Day13" t="Include">
           <e p="Day13.cs" t="Include" />
         </e>
+        <e p="Day14" t="Include">
+          <e p="Day14.cs" t="Include" />
+        </e>
         <e p="Day2" t="Include">
           <e p="Day2.cs" t="Include" />
         </e>
